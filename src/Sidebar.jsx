@@ -180,43 +180,43 @@ export function Sidebar() {
           )}>
           {navItems.map(section => (
             <div key={section.title} className="space-y-1">
-              {section.items.map(item => {
-                if (item.children) {
-                  return (
-                    <div key={item.title}>
-                      <button
-                        onClick={() => toggleExpanded(item.title)}
-                        className="text-sidebar-foreground hover:bg-sidebar-accent flex w-full items-center justify-between rounded-md px-3 py-2 text-sm">
-                        <span>{item.title}</span>
+              {section.items.map(item =>
+                item.children ? (
+                  <div key={item.title}>
+                    <button
+                      onClick={() => toggleExpanded(item.title)}
+                      className="text-sidebar-foreground hover:bg-sidebar-accent flex w-full items-center justify-between rounded-md px-3 py-2 text-sm">
+                      <span>{item.title}</span>
 
-                        {expandedItems.includes(item.title) ? (
-                          <ChevronDown className="h-4 w-4" />
-                        ) : (
-                          <ChevronRight className="h-4 w-4" />
-                        )}
-                      </button>
-
-                      {expandedItems.includes(item.title) && (
-                        <div className="border-sidebar-border ml-3 space-y-1 border-l pl-3">
-                          {item.children.map(child => (
-                            <a
-                              key={child.title}
-                              href={child.href}
-                              className="text-sidebar-foreground/70 hover:bg-sidebar-accent hover:text-sidebar-foreground block rounded-md px-3 py-1.5 text-sm">
-                              {child.title}
-                            </a>
-                          ))}
-                        </div>
+                      {expandedItems.includes(item.title) ? (
+                        <ChevronDown className="h-4 w-4" />
+                      ) : (
+                        <ChevronRight className="h-4 w-4" />
                       )}
-                    </div>
-                  )
-                }
-                console.log(location.pathname, item.href)
-                return (
+                    </button>
+
+                    {expandedItems.includes(item.title) && (
+                      <div className="border-sidebar-border ml-3 space-y-1 border-l pl-3">
+                        {item.children.map(child => (
+                          <Link
+                            key={child.title}
+                            to={child.href}
+                            className={twMerge(
+                              'mb-1 flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
+                              'text-sidebar-foreground hover:bg-sidebar-accent flex w-full items-center justify-between rounded-md px-3 py-2 text-sm',
+                              location.pathname.replace('/', '') === child.href &&
+                                'bg-sidebar-border text-sidebar-foreground hover:bg-sidebar-border hover:text-sidebar-foreground',
+                            )}>
+                            <span>{child.title}</span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
                   <Link
                     key={item.title}
                     to={item.href}
-                    // className="bg-sidebar-accent text-sidebar-foreground block rounded-md px-3 py-2 text-sm font-medium">
                     className={twMerge(
                       'mb-1 flex items-center gap-3 rounded-md px-3 py-2 text-sm font-medium transition-colors',
                       'text-sidebar-foreground hover:bg-sidebar-accent flex w-full items-center justify-between rounded-md px-3 py-2 text-sm',
@@ -226,8 +226,8 @@ export function Sidebar() {
                     )}>
                     <span>{item.title}</span>
                   </Link>
-                )
-              })}
+                ),
+              )}
             </div>
           ))}
         </div>
