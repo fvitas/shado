@@ -1,32 +1,32 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Label } from '@/components/ui/label.jsx'
 import { Switch } from '@/components/ui/switch.jsx'
+import { PreviewWrapper } from '@/pages/PreviewWrapper.jsx'
 import { useState } from 'react'
 
 export function SwitchPage() {
   const [checked, setChecked] = useState(false)
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Switch</h1>
-        <p className="text-slate-600">Toggle switch control</p>
-      </div>
+    <div className="flex h-full w-full flex-col lg:w-2xl">
+      <h1 className="text-foreground mb-4 text-4xl font-bold">Switch</h1>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Examples</CardTitle>
-        </CardHeader>
-
-        <CardContent>
+      <PreviewWrapper>
+        <div>
           <div className="flex items-center justify-between">
-            <Label>Enable notifications</Label>
-            <Switch checked={checked} onCheckedChange={setChecked} />
+            <Label htmlFor="enable-notifictions" className="cursor-pointer">
+              Enable notifications
+            </Label>
+            <Switch
+              id="enable-notifictions"
+              className="cursor-pointer"
+              checked={checked}
+              onCheckedChange={setChecked}
+            />
           </div>
 
-          <p className="text-sm text-slate-600 mt-4">Status: {checked ? 'On' : 'Off'}</p>
-        </CardContent>
-      </Card>
+          <p className="text-foreground mt-4 text-sm">Status: {checked ? 'On' : 'Off'}</p>
+        </div>
+      </PreviewWrapper>
     </div>
   )
 }
