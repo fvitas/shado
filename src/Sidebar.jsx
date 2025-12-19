@@ -5,6 +5,7 @@ import { AlertPage } from '@/pages/AlertPage.jsx'
 import { AspectRatioPage } from '@/pages/AspectRatioPage.jsx'
 import { AvatarPage } from '@/pages/AvatarPage.jsx'
 import { BadgePage } from '@/pages/BadgePage.jsx'
+import { BreadcrumbsPage } from '@/pages/BreadcrumbsPage.jsx'
 import { ButtonPage } from '@/pages/ButtonPage.jsx'
 import { CardPage } from '@/pages/CardPage.jsx'
 import { CheckboxPage } from '@/pages/CheckboxPage.jsx'
@@ -23,7 +24,7 @@ const uiComponentList = [
   'aspect-ratio', // ✅
   'avatar', // ✅
   'badge', // ✅
-  'breadcrumb',
+  'breadcrumb', // ✅
   'button-group',
   'button', // ✅
   'calendar',
@@ -78,6 +79,7 @@ export const uiComponents = [
   { title: 'Aspect ratio', href: 'aspect-ratio', page: AspectRatioPage },
   { title: 'Avatar', href: 'avatar', page: AvatarPage },
   { title: 'Badge', href: 'badge', page: BadgePage },
+  { title: 'Breadcrumb', href: 'breadcrumb', page: BreadcrumbsPage },
   { title: 'Button', href: 'button', page: ButtonPage },
   { title: 'Card', href: 'card', page: CardPage },
   { title: 'Checkbox', href: 'checkbox', page: CheckboxPage },
