@@ -7,6 +7,7 @@ import { AvatarPage } from '@/pages/AvatarPage.jsx'
 import { BadgePage } from '@/pages/BadgePage.jsx'
 import { BreadcrumbsPage } from '@/pages/BreadcrumbsPage.jsx'
 import { ButtonPage } from '@/pages/ButtonPage.jsx'
+import { CalendarPage } from '@/pages/CalendarPage.jsx'
 import { CardPage } from '@/pages/CardPage.jsx'
 import { CheckboxPage } from '@/pages/CheckboxPage.jsx'
 import { InputPage } from '@/pages/InputPage.jsx'
@@ -27,7 +28,7 @@ const uiComponentList = [
   'breadcrumb', // ✅
   'button-group',
   'button', // ✅
-  'calendar',
+  'calendar', // ✅
   'card', // ✅
   'carousel',
   'chart',
@@ -81,6 +82,7 @@ export const uiComponents = [
   { title: 'Badge', href: 'badge', page: BadgePage },
   { title: 'Breadcrumb', href: 'breadcrumb', page: BreadcrumbsPage },
   { title: 'Button', href: 'button', page: ButtonPage },
+  { title: 'Calendar', href: 'calendar', page: CalendarPage },
   { title: 'Card', href: 'card', page: CardPage },
   { title: 'Checkbox', href: 'checkbox', page: CheckboxPage },
   { title: 'Input', href: 'input', page: InputPage },
