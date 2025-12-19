@@ -1,14 +1,13 @@
 import { Button } from '@/components/ui/button.jsx'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card.jsx'
+import { PreviewWrapper } from '@/pages/PreviewWrapper.jsx'
 
 export function CardPage() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Card</h1>
-        <p className="text-slate-600">Container component with header, content, and footer</p>
-      </div>
-      <div className="grid gap-6 md:grid-cols-2">
+    <div className="flex h-full w-full flex-col lg:w-2xl">
+      <h1 className="text-foreground mb-4 text-4xl font-bold">Card</h1>
+
+      <PreviewWrapper className="grid gap-6 md:grid-cols-2">
         <Card>
           <CardHeader>
             <CardTitle>Card Example</CardTitle>
@@ -16,7 +15,7 @@ export function CardPage() {
           </CardHeader>
 
           <CardContent>
-            <p className="text-sm text-slate-600">Card content goes here.</p>
+            <p>Card content goes here.</p>
           </CardContent>
 
           <CardFooter>
@@ -32,17 +31,17 @@ export function CardPage() {
           <CardContent>
             <div className="space-y-2">
               <div className="flex justify-between text-sm">
-                <span className="text-slate-600">Monthly</span>
+                <span>Monthly</span>
                 <span className="font-medium">$29</span>
               </div>
               <div className="flex justify-between text-sm">
-                <span className="text-slate-600">Yearly</span>
+                <span>Yearly</span>
                 <span className="font-medium">$290</span>
               </div>
             </div>
           </CardContent>
         </Card>
-      </div>
+      </PreviewWrapper>
     </div>
   )
 }

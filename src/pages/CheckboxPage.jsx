@@ -1,32 +1,32 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
 import { Checkbox } from '@/components/ui/checkbox.jsx'
 import { Label } from '@/components/ui/label.jsx'
-import { useState } from 'react'
+import { PreviewWrapper } from '@/pages/PreviewWrapper.jsx'
 
 export function CheckboxPage() {
-  const [checked, setChecked] = useState(false)
-
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Checkbox</h1>
-        <p className="text-slate-600">Selection control</p>
-      </div>
+    <div className="flex h-full w-full flex-col lg:w-2xl">
+      <h1 className="text-foreground mb-4 text-4xl font-bold">Checkbox</h1>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Examples</CardTitle>
-        </CardHeader>
+      <PreviewWrapper className="flex flex-col gap-10">
+        <div className="flex items-center gap-2">
+          <Checkbox id="terms" />
+          <Label htmlFor="terms" className="cursor-pointer">
+            Accept terms and conditions
+          </Label>
+        </div>
 
-        <CardContent>
-          <div className="space-y-3">
-            <div className="flex items-center gap-2">
-              <Checkbox checked={checked} onCheckedChange={setChecked} />
-              <Label>Accept terms</Label>
-            </div>
+        <div className="flex items-start gap-4">
+          <Checkbox id="terms-2" defaultChecked />
+          <div className="grid gap-2">
+            <Label htmlFor="terms-2" className="cursor-pointer">
+              Accept terms and conditions
+            </Label>
+            <p className="text-muted-foreground text-sm">
+              By clicking this checkbox, you agree to the terms and conditions.
+            </p>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </PreviewWrapper>
     </div>
   )
 }

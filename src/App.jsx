@@ -1,4 +1,4 @@
-import { MainContent } from '@/MainContent.jsx'
+import { Introduction } from '@/pages/Introduction.jsx'
 import { Sidebar, uiComponents } from '@/Sidebar.jsx'
 import { ThemeProvider } from '@/theme-provider.jsx'
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
@@ -21,7 +21,7 @@ export function App() {
       <ThemeProvider>
         <Routes>
           <Route path="/" element={<Layout />}>
-            <Route index element={<MainContent />} />
+            <Route index element={<Introduction />} />
 
             {uiComponents.map(component => (
               <Route key={component.href} path={component.href} element={<component.page />} />

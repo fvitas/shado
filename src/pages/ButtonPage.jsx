@@ -1,21 +1,17 @@
 import { Button } from '@/components/ui/button.jsx'
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card.jsx'
+import { PreviewWrapper } from '@/pages/PreviewWrapper.jsx'
 import { Download, Loader, PlusIcon, SearchIcon } from 'lucide-react'
 
 export function ButtonPage() {
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-3xl font-bold text-slate-900 mb-2">Button</h1>
-      </div>
+    <div className="flex h-full w-full flex-col lg:w-2xl">
+      <h1 className="text-foreground mb-4 text-4xl font-bold">Button</h1>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Variants</CardTitle>
-        </CardHeader>
+      <PreviewWrapper className="flex flex-col gap-10">
+        <div className="flex flex-col gap-2">
+          <h2>Variants</h2>
 
-        <CardContent>
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-2">
             <Button>Default</Button>
             <Button variant="destructive">Destructive</Button>
             <Button variant="outline">Outline</Button>
@@ -27,30 +23,22 @@ export function ButtonPage() {
             <Button variant="error">Error</Button>
             <Button variant="warning">Warning</Button>
           </div>
-        </CardContent>
-      </Card>
+        </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Sizes</CardTitle>
-        </CardHeader>
+        <div className="flex flex-col gap-2">
+          <h2>Sizes</h2>
 
-        <CardContent>
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-2">
             <Button size="sm">Small</Button>
             <Button size="default">Default</Button>
             <Button size="lg">Large</Button>
           </div>
-        </CardContent>
-      </Card>
+        </div>
 
-      <Card>
-        <CardHeader>
-          <CardTitle>Button with icons</CardTitle>
-        </CardHeader>
+        <div className="flex flex-col gap-2">
+          <h2>Button with icons</h2>
 
-        <CardContent>
-          <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-wrap items-center gap-2">
             <Button variant="outline" size="icon">
               <Download />
             </Button>
@@ -69,8 +57,8 @@ export function ButtonPage() {
               <Loader className="animate-spin" /> Loading...
             </Button>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </PreviewWrapper>
     </div>
   )
 }

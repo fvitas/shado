@@ -1,4 +1,4 @@
-export function MainContent() {
+export function Introduction() {
   return (
     <div className="flex h-full w-full flex-col lg:w-2xl">
       <h1 className="text-foreground mb-4 text-4xl font-bold">Introduction</h1>
